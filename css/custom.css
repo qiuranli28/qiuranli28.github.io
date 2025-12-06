@@ -8,3 +8,19 @@
     justify-content: flex-start;
     align-content: center;
 }
+
+/* 禁用特定图片的 lightgallery 点击放大功能 */
+img.no-lightbox,
+img.no-zoom,
+img[data-no-lightbox="true"] {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* 如果图片被 a 标签包裹，也禁用链接点击 */
+a:has(img.no-lightbox),
+a:has(img.no-zoom),
+a:has(img[data-no-lightbox="true"]) {
+    pointer-events: none !important;
+    cursor: default !important;
+}
